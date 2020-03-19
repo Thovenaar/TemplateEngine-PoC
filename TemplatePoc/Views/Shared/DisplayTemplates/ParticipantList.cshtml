@@ -1,0 +1,8 @@
+﻿@model TemplatePoc.Models.ParticipantList
+
+<ul>
+    @foreach (var contact in Model.Contacts)
+    {
+        <li>@contact.FirstName @contact.LastName</li>
+    }
+</ul>
