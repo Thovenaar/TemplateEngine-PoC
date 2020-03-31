@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using AngleSharp;
+using AngleSharp.Dom;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using AngleSharp;
-using AngleSharp.Dom;
-using AngleSharp.Html.Dom;
-using Microsoft.Extensions.FileSystemGlobbing.Internal.Patterns;
 using TemplatePoc.Factories;
 using TemplatePoc.Models;
 
@@ -28,8 +25,8 @@ namespace TemplatePoc.Controllers
         {
             var template = System.IO.File.ReadAllText("Views/Home/Template.cshtml");
             var mailComponents = new List<IMailComponent>();
-     
-            var pattern = "<component>([a-zA-Z]+)<\\/component>";
+
+            const string pattern = "<component>([a-zA-Z]+)<\\/component>";
             var matches = Regex.Matches(template, pattern);
 
             var mailComponentFactory = new MailComponentFactory();
@@ -41,7 +38,7 @@ namespace TemplatePoc.Controllers
                 {
                     mailComponents.Add(new Content(template.Substring(currentIndex, match.Index - currentIndex)));
                 }
-                
+
                 var component = match.Groups[1].Value;
                 mailComponents.Add(mailComponentFactory.Create(component));
                 currentIndex = match.Index + match.Length;
@@ -49,9 +46,7 @@ namespace TemplatePoc.Controllers
 
             if (template.Length > currentIndex)
             {
-                mailComponents.Add(
-                    new Content(template.Substring(currentIndex, template.Length - currentIndex))
-                );
+                mailComponents.Add(new Content(template.Substring(currentIndex, template.Length - currentIndex)));
             }
 
             return View(mailComponents);

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\projects\\TemplatePoc\\TemplatePoc\\TemplatePoc.csproj": {}
+    "C:\\Projects\\TemplatePoc\\TemplatePoc\\TemplatePoc.csproj": {}
   },
   "projects": {
-    "C:\\projects\\TemplatePoc\\TemplatePoc\\TemplatePoc.csproj": {
+    "C:\\Projects\\TemplatePoc\\TemplatePoc\\TemplatePoc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\TemplatePoc\\TemplatePoc\\TemplatePoc.csproj",
+        "projectUniqueName": "C:\\Projects\\TemplatePoc\\TemplatePoc\\TemplatePoc.csproj",
         "projectName": "TemplatePoc",
-        "projectPath": "C:\\projects\\TemplatePoc\\TemplatePoc\\TemplatePoc.csproj",
+        "projectPath": "C:\\Projects\\TemplatePoc\\TemplatePoc\\TemplatePoc.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\TemplatePoc\\TemplatePoc\\obj\\",
+        "outputPath": "C:\\Projects\\TemplatePoc\\TemplatePoc\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
